@@ -1,0 +1,14 @@
+name: Call a reusable workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  call-workflow-passing-data:
+    uses: ./.github/workflows/workflow-2.yml
+    with:
+      username: mona
+    secrets:
+      token: ${{ secrets.TOKEN }}
